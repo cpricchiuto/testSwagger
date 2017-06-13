@@ -9,10 +9,10 @@ schemes:
 basePath: /v1
 produces:
   - application/json
-# security: 
-#  - oauth2: 
+# security:
+#  - oauth2:
 #    $ref: security/github/accessCode
-#  - apitoken: 
+#  - apitoken:
 #    type: "header"
 #    name: "api_key"
 paths:
@@ -31,9 +31,9 @@ paths:
           description: Longitude component of location.
           required: true
           type: number
-      tags: 
+      tags:
         - Products
-      responses:  
+      responses:
         "200":
           description: An array of products
           schema:
@@ -59,9 +59,9 @@ paths:
           description: Longitude component of end location.
           required: true
           type: number
-      tags: 
+      tags:
         - Estimates
-      responses:  
+      responses:
         "200":
           description: An array of price estimates by product
           schema:
@@ -85,9 +85,9 @@ paths:
           in: query
           type: string
           description: Unique identifier representing a specific product for a given latitude & longitude.
-      tags: 
+      tags:
         - Estimates
-      responses:  
+      responses:
         "200":
           description: An array of products
           schema:
@@ -100,7 +100,7 @@ paths:
     get:
       summary: User Profile
       description: The User Profile endpoint returns information about the Uber user that has authorized with the application.
-      tags: 
+      tags:
         - User
       responses:
         "200":
@@ -115,7 +115,7 @@ paths:
     get:
       summary: User Activity
       description: The User Activity endpoint returns data about a user's lifetime activity with Uber. The response will include pickup locations and times, dropoff locations and times, the distance of past requests, and information about which products were requested.<br><br>The history array in the response will have a maximum length based on the limit parameter. The response value count may exceed limit, therefore subsequent API requests may be necessary.
-      tags: 
+      tags:
         - User
       responses:
         "200":
@@ -173,7 +173,7 @@ definitions:
       display_name:
         type: string
         description: Display name of product.
-      estimate: 
+      estimate:
         type: string
         description: Formatted string of estimate in local currency of the start location. Estimate could be a range, a single number (flat rate) or "Metered" for TAXI.
       low_estimate:
@@ -205,7 +205,7 @@ definitions:
         description: Image URL of the Uber user.
       promo_code:
         type: string
-        description: Promo code of the Uber user.   
+        description: Promo code of the Uber user.
   Activity:
     properties:
       uuid:
